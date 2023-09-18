@@ -1,17 +1,14 @@
 package com.example;
 
+import java.util.Scanner;
+
 class Class  {
     String classe ;
     String Classes[] = {"elfe noir", "elfe", "mi-humain", "humain","nain","homme-bete","loup-garou", "vampire"}; 
 
 
-    Class (String classe){
-    Player player = new Player();
-    if (player.getClass1() != Classes.toString()){
-        System.out.println("vous devez choisir une classe valide");
-        classe = ""; 
-        player.setClass1(classe);
-    }
+    Class (){
+        
     }
 
     public String getClasse() {
@@ -22,4 +19,17 @@ class Class  {
         this.classe = classe;
     };
     
+      String CheckClasse(String classe) {
+        if (java.util.Arrays.binarySearch(Classes, classe) < 0)
+        {
+            classe = " " ; 
+            System.out.println("veuillez entrer une classe valide svp \n");
+            System.out.println("Vous aveze le choix entre : " + Classes );
+            Scanner sc = new Scanner(System.in); 
+            String str = sc.nextLine();
+            classe = str ;
+            this.CheckClasse(classe);            
+        }
+        return classe;
+    }
 }
