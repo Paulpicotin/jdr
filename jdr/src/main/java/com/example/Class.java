@@ -2,14 +2,9 @@ package com.example;
 
 import java.util.Scanner;
 
-class Class  {
+class Class implements IClass {
     String classe ;
-    String Classes[] = {"elfe noir", "elfe", "mi-humain", "humain","nain","homme-bete","loup-garou", "vampire"}; 
-
-
-    Class (){
-        
-    }
+    
 
     public String getClasse() {
         return classe;
@@ -19,7 +14,7 @@ class Class  {
         this.classe = classe;
     };
     
-      String CheckClasse(String classe) {
+       String CheckClasse(String classe) {
         if (java.util.Arrays.binarySearch(Classes, classe) < 0)
         {
             classe = " " ; 
@@ -27,7 +22,7 @@ class Class  {
             System.out.println("Vous aveze le choix entre : " + java.util.Arrays.toString(Classes) );
             Scanner sc = new Scanner(System.in); 
             String str = sc.nextLine();
-            classe = str ;
+            classe = str ; 
             this.CheckClasse(classe);            
         }
         return classe;
