@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.Arrays;
 //Ceci importe la classe Scanner du package java.util
 import java.util.Scanner; 
 

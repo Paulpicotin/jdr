@@ -2,9 +2,9 @@ package com.example;
 
 import java.util.Scanner;
 
-class Class implements IClass {
+class Class  {
     String classe ;
-    
+    String Classes[] = {"elfe noir", "elfe", "mi-humain", "humain","nain","homme-bete","loup-garou", "vampire"}; 
 
     public String getClasse() {
         return classe;
