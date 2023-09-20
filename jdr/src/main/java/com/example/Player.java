@@ -148,6 +148,32 @@ class Player implements Serializable {
             e.getStackTrace();
         }
     }
+    void RecupSauvegarde() throws IOException {
+        file = ("D:\\jdr_prog\\jdr\\src\\main\\java\\com\\example\\sauvegarde\\save.txt ");
+        try {
+            FileOutputStream file = new FileOutputStream("file.txt");
+            ObjectOutputStream output = new ObjectOutputStream(file);
 
+            // Writing to the file using ObjectOutputStream
+            
+            output.writeObject(this);
+
+            FileInputStream fileStream = new FileInputStream("file.txt");
+            // Creating an object input stream
+            ObjectInputStream objStream = new ObjectInputStream(fileStream);
+
+            // Using the readObject() method
+            System.out.println("String data: " + objStream.readObject());
+
+            output.close();
+            objStream.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+        }
+        
+    }
 }
+
+
 

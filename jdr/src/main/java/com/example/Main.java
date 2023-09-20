@@ -12,8 +12,12 @@ public class Main {
             System.out.println("Voulez vous creer un personnage? 1= oui 0= non");
             int str = sc.nextInt();
             int oui = 1;
+            int non = 0;
             if (str == oui){
                 player.CreatePlayer();
+            }
+            else if (str == non ) {
+                player.RecupSauvegarde();
             }
         }
         System.out.println(player.pseudo);
