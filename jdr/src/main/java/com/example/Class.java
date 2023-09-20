@@ -20,9 +20,10 @@ class Class  {
             classe = " " ; 
             System.out.println("veuillez entrer une classe valide svp \n");
             System.out.println("Vous aveze le choix entre : " + java.util.Arrays.toString(Classes) );
-            Scanner sc = new Scanner(System.in); 
-            String str = sc.nextLine();
-            classe = str ; 
+            try (Scanner sc = new Scanner(System.in)) {
+                String str = sc.nextLine();
+                classe = str ;
+            } 
             this.CheckClasse(classe);            
         }
         return classe;

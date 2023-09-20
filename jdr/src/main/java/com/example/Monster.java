@@ -2,13 +2,14 @@ package com.example;
 
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
 import javax.swing.text.html.parser.Entity;
 
-class Monster implements IEntity {
+
+
+public class Monster implements IEntity {
     String name ;
     String nulle = "";
     String  dragon =  "Dragon";
@@ -22,12 +23,20 @@ class Monster implements IEntity {
     String  hamster = "Hamster";
     String  troll = "Troll";
     
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     List<String> monsterTypeList = new ArrayList<>(0);
     Random r = new Random();
     int i = 0; 
     
-    Monster(String name){
-        this.name = name; 
+    protected Monster(String name, List<Monster> statistic){
+        this.name = this.GetNameMonster(); 
         monsterTypeList.add(nulle);
         monsterTypeList.add(dragon);
         monsterTypeList.add(gobelin);
@@ -44,18 +53,18 @@ class Monster implements IEntity {
 
     @Override
     public Player setTarget(Player player) {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'setTarget'");
     }
 
     @Override
     public Entity DefineMonster(Entity entity) {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'DefineMonster'");
     }
 
     @Override
-    public String GetName() {
+    public String GetNameMonster() {
         name = monsterTypeList.get(i) ;
         System.out.println(name);
         return name; 

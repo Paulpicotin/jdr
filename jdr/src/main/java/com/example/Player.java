@@ -57,8 +57,8 @@ class Player {
     
     Player CreatePlayer(){
         Class class1 = new Class();
-        Scanner sc2 = new Scanner(System.in);        
-             System.out.println("veuillez entrer votre pseudo");
+        try (Scanner sc2 = new Scanner(System.in)) {
+            System.out.println("veuillez entrer votre pseudo");
              String str2 = sc2.nextLine();
              this.setPseudo(str2);
              this.getInventaire();
@@ -67,7 +67,8 @@ class Player {
             class1.setClasse(class1.CheckClasse(str3));
             this.setClass1(class1.classe);
             this.DefineClass(str3);
-            System.out.println(this.statistic);
+        }        
+             System.out.println(this.statistic);
         return this;
     }
     private void DefineClass(String str) {
