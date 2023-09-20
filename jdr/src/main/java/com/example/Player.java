@@ -1,21 +1,26 @@
 package com.example;
 
+import java.io.FileInputStream;
+// import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Player { 
+class Player implements Serializable { 
     String pseudo ;
     String class1;  
     String inventaire[];
+    String file;
     //int statistic [];
     List statistic = new ArrayList<>(0);
-
-
-   Player player (String pseudo , String class1 , String inventaires[], int statistic[]) {
-        
-        return player("", "", inventaire, statistic);
-    }   
+//    Player player (String pseudo , String class1 , String inventaires[], int statistic[]) {       
+//         return player("", "", inventaire, statistic);
+//     }   
 
 
     public String getPseudo() {
@@ -55,7 +60,7 @@ class Player {
         this.inventaire = inventaire;
     }
     
-    Player CreatePlayer(){
+    Player CreatePlayer() throws IOException{
         Class class1 = new Class();
         try (Scanner sc2 = new Scanner(System.in)) {
             System.out.println("veuillez entrer votre pseudo");
@@ -69,6 +74,14 @@ class Player {
             this.DefineClass(str3);
         }        
              System.out.println(this.statistic);
+            //  try (Scanner sc1 = new Scanner(System.in)) {
+            //     System.out.println("Voulez vous enregistrer votre personnage ?");
+            //     String str2 = sc1.nextLine();
+            //     String oui = "oui";
+            //     if (str2 == oui){
+            //         Sauvegarde();
+            //     }
+            Sauvegarde();
         return this;
     }
     private void DefineClass(String str) {
@@ -111,9 +124,30 @@ class Player {
                 "une erreur est survenu veuillez reessayer");
             break;
         }
-    }
+    }   
 
-   
+    void Sauvegarde() throws IOException{
+        file = ("D:\\jdr_prog\\jdr\\src\\main\\java\\com\\example\\sauvegarde\\save.txt");
+        try{
+            FileOutputStream fileStream = new FileOutputStream(file);
+            ObjectOutputStream objStream = new ObjectOutputStream(fileStream);
+            
+            // writes objects to output stream
+            objStream.writeObject(this);
+
+            // Reads data using the ObjectInputStream
+            FileInputStream file = new FileInputStream("file.txt");
+            try (ObjectInputStream output = new ObjectInputStream(file)) {
+                System.out.println("String data: " + output.readObject());
+            }
+
+            objStream.close();
+            objStream.close();
+        }
+        catch(Exception e){
+            e.getStackTrace();
+        }
+    }
 
 }
 
