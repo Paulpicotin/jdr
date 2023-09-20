@@ -17,13 +17,13 @@ int vie;
 
 
     public void Create(Player player) {
-        Vampire vampire = new Vampire(); 
-        vampire.vie = 250;
-        vampire.magie = 20;
-        vampire.mana = 50;
-        vampire.force = 15; 
-        vampire.intelligence = 25;
-        vampire.chance = chance + random.nextInt(5) - 2 ;
+        Vampire vampire = new Vampire();
+        vampire.vie = 5;
+        vampire.magie = 11;
+        vampire.mana = 7;
+        vampire.force = 7; 
+        vampire.intelligence = 13;
+        vampire.chance = chance + random.nextInt(5) ;
         // int statistic [] = {vie , magie, mana, force, chance, intelligence};
         statistic.add(vampire);
         player.setStatistic(statistic);

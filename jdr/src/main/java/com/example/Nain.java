@@ -18,10 +18,10 @@ int vie;
 
     public void Create(Player player) {
         Nain nain = new Nain(); 
-        nain.vie = 150;
+        nain.vie = 3;
         nain.magie = 5;
-        nain.mana = 35;
-        nain.force = 15; 
+        nain.mana = 2;
+        nain.force = 8; 
         nain.intelligence = 10;
         nain.chance = chance + random.nextInt(5) ;
         // int statistic [] = {vie , magie, mana, force, chance, intelligence};

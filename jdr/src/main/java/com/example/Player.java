@@ -12,7 +12,7 @@ class Player {
     List statistic = new ArrayList<>(0);
 
 
-    Player player (String pseudo , String class1 , String inventaires[], int statistic[]) {
+   Player player (String pseudo , String class1 , String inventaires[], int statistic[]) {
         
         return player("", "", inventaire, statistic);
     }   
@@ -55,8 +55,6 @@ class Player {
         this.inventaire = inventaire;
     }
     
-   
-
     Player CreatePlayer(){
         Class class1 = new Class();
         Scanner sc2 = new Scanner(System.in);        
@@ -69,6 +67,7 @@ class Player {
             class1.setClasse(class1.CheckClasse(str3));
             this.setClass1(class1.classe);
             this.DefineClass(str3);
+            System.out.println(this.statistic);
         return this;
     }
     private void DefineClass(String str) {
@@ -112,6 +111,8 @@ class Player {
             break;
         }
     }
+
+   
 
 }
 

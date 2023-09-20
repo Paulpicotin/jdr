@@ -18,11 +18,11 @@ int vie;
 
     public void Create(Player player) {
         Homme_bete homme_bete = new Homme_bete(); 
-        homme_bete.vie = 175;
-        homme_bete.magie = 2;
-        homme_bete.mana = 10;
-        homme_bete.force = 25; 
-        homme_bete.intelligence = 10;
+        homme_bete.vie = 4;
+        homme_bete.magie = 5;
+        homme_bete.mana = 3;
+        homme_bete.force = 10; 
+        homme_bete.intelligence = 8;
         homme_bete.chance = chance + random.nextInt(5) ;
         // int statistic [] = {vie , magie, mana, force, chance, intelligence};
         statistic.add(homme_bete);

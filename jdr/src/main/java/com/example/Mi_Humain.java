@@ -18,12 +18,12 @@ int vie;
 
 
     public void Create(Player player) {
-        Mi_Humain mi_Humain = new Mi_Humain(); 
-        mi_Humain.vie = 125;
+        Mi_Humain mi_Humain = new Mi_Humain();   
+        mi_Humain.vie = 3;
         mi_Humain.magie = 5;
-        mi_Humain.mana = 50;
-        mi_Humain.force = 25; 
-        mi_Humain.intelligence = 20;
+        mi_Humain.mana = 7;
+        mi_Humain.force = 8; 
+        mi_Humain.intelligence = 11;
         mi_Humain.chance = chance + random.nextInt(5) ;
         // int statistic [] = {vie , magie, mana, force, chance, intelligence};
         statistic.add(mi_Humain);

@@ -18,11 +18,11 @@ int vie;
 
     public void Create(Player player) {
         Loup_Garou loup_Garou = new Loup_Garou(); 
-        loup_Garou.vie = 200;
-        loup_Garou.magie = 10;
-        loup_Garou.mana = 25;
-        loup_Garou.force = 15; 
-        loup_Garou.intelligence = 7;
+        loup_Garou.vie = 5;
+        loup_Garou.magie = 5;
+        loup_Garou.mana = 5;
+        loup_Garou.force = 9; 
+        loup_Garou.intelligence = 10;
         loup_Garou.chance = chance + random.nextInt(5) ;
         // int statistic [] = {vie , magie, mana, force, chance, intelligence};
         statistic.add(loup_Garou);
