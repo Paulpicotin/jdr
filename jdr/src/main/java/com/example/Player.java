@@ -173,6 +173,10 @@ class Player implements Serializable {
         }
         
     }
+    /*
+     * Creer une methode appeker au dessus pour recup les infos complete du player
+     * et les faires réafficher dans le main en liant les infos sauvegarder du player avec celle de la classe player
+     */
 }
 
 
