@@ -15,7 +15,7 @@ class Player implements Serializable {
     String pseudo ;
     String class1;  
     String inventaire[];
-    String file;
+    String file; 
     //int statistic [];
     List statistic = new ArrayList<>(0);
 //    Player player (String pseudo , String class1 , String inventaires[], int statistic[]) {       
@@ -60,7 +60,13 @@ class Player implements Serializable {
         this.inventaire = inventaire;
     }
     
-    Player CreatePlayer() throws IOException{
+    
+    public Player() {
+       
+    }
+
+    Player CreatePlayer(Player player) throws IOException{
+        
         Class class1 = new Class();
         try (Scanner sc2 = new Scanner(System.in)) {
             System.out.println("veuillez entrer votre pseudo");
@@ -82,7 +88,7 @@ class Player implements Serializable {
             //         Sauvegarde();
             //     }
             Sauvegarde();
-        return this;
+        return this;        
     }
     private void DefineClass(String str) {
 
@@ -150,6 +156,7 @@ class Player implements Serializable {
     }
     void RecupSauvegarde() throws IOException {
         file = ("D:\\jdr_prog\\jdr\\src\\main\\java\\com\\example\\sauvegarde\\save.txt ");
+        Player player = new Player();
         try {
             FileOutputStream file = new FileOutputStream("file.txt");
             ObjectOutputStream output = new ObjectOutputStream(file);
@@ -163,8 +170,15 @@ class Player implements Serializable {
             ObjectInputStream objStream = new ObjectInputStream(fileStream);
 
             // Using the readObject() method
-            System.out.println("String data: " + objStream.readObject());
+            Player saveplayer = (Player) objStream.readObject();
+            player.setPseudo(saveplayer.pseudo);
+            saveplayer.getStatistic();
+            saveplayer.getClass1();
+            saveplayer.getInventaire();
+            System.out.println("String data: " + saveplayer.toString());
 
+           
+            RecupPlayer(saveplayer);
             output.close();
             objStream.close();
         }
@@ -174,9 +188,15 @@ class Player implements Serializable {
         
     }
     /*
-     * Creer une methode appeker au dessus pour recup les infos complete du player
+     * Creer une methode appeler au dessus pour recup les infos complete du player
      * et les faires réafficher dans le main en liant les infos sauvegarder du player avec celle de la classe player
      */
+    Player RecupPlayer(Player player){
+        System.out.println(player.pseudo);
+        System.out.println(player.class1);
+        System.out.println(java.util.Arrays.toString(player.inventaire));
+        return player;
+    }
 }
 
 

@@ -14,15 +14,15 @@ public class Main {
             int oui = 1;
             int non = 0;
             if (str == oui){
-                player.CreatePlayer();
+                player.CreatePlayer(player);
             }
             else if (str == non ) {
                 player.RecupSauvegarde();
             }
         }
-        System.out.println(player.pseudo);
-        System.out.println(player.class1);
-        System.out.println(java.util.Arrays.toString(player.inventaire));
+       System.out.println(player.pseudo);
+       System.out.println(player.class1);
+       System.out.println(java.util.Arrays.toString(player.inventaire));
 
         
     }
